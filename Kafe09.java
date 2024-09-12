@@ -1,12 +1,32 @@
+import java.util.Scanner;
+
 public class Kafe09 {
     
     public static void main(String[] args) {
-        boolean keanggotaan:
-        int jmlKopi, jmlTeh, jmlRoti:
-        double hargaKopi = 30000.0, hargaTeh = 20000.0, hargaRoti = 25000.0:
+        Scanner input = new Scanner(System.in);
+        boolean keanggotaan;
+        int jmlKopi, jmlTeh, jmlRoti;
+        double hargaKopi = 30000.0, hargaTeh = 20000.0, hargaRoti = 25000.0, totalHarga, nominalBayar;
         float diskon = 10 / 100f;
 
-        System.out.println("Masukkan keanggotaan (true/false): ");
-        keanggotaan
+        System.out.print("Masukkan nama keanggotaan (true/false): ");
+        keanggotaan = input.nextBoolean();
+        System.out.print("Masukkan jumlah pembelian kopi: ");
+        jmlKopi = input.nextInt();
+        System.out.print("Masukkan jumlah pembelian teh: ");
+        jmlTeh = input.nextInt();
+        System.out.print("Masukkan jumlah pembelian roti: ");
+        jmlRoti = input.nextInt();
+
+        totalHarga = (jmlKopi * hargaKopi) + (jmlTeh * hargaTeh) + (jmlRoti * hargaRoti);
+        nominalBayar = totalHarga - (diskon * totalHarga);
+
+        System.out.println("Keanggotaan pelanggan" + keanggotaan);
+        System.out.println("Item pembelian" + jmlKopi + "kopi, " + jmlTeh + "teh, " + jmlRoti + "roti");
+        System.out.println("Nominal bayar RP " + nominalBayar);
+
+        
+
+       
     }
 }
